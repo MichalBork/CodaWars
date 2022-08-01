@@ -13,25 +13,25 @@
 //"    Hello     World   "                  =>  "#HelloWorld"
 //""                                        =>  false
 
-function generateHashtag($str) {
+function generateHashtag($str)
+{
+    if (empty($str)) {
+        return false;
+    }
 
-        if(empty($str)){
-            return false;
-        }
+    if (trim($str) == '') {
+        return false;
+    }
 
-        if(trim($str) == '') return false;
+    $str = ucwords($str);
 
-    $str=ucwords($str);
-
-        $str=str_replace(' ',"",$str);
-        if(strlen('#'.$str)>140) return false;
-
-
-        return '#'.$str;
+    $str = str_replace(' ', "", $str);
+    if (strlen('#' . $str) > 140) {
+        return false;
+    }
 
 
-
-
+    return '#' . $str;
 }
 
 
